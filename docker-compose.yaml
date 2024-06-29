@@ -15,6 +15,6 @@ services:
       - IPC_LOCK
     volumes:
       - vault_data:/vault/data
-    command: vault server -config=/vault.json
+    command: vault server -config=vault.json
 volumes:
   vault_data:
