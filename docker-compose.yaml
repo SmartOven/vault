@@ -13,5 +13,7 @@ services:
       - IPC_LOCK
     volumes:
       - ./vault.hcl:/vault/vault.hcl
-      - ./vault/data:/vault/data
+      - vault_data:/vault/data
     command: vault server -config=/vault/vault.hcl
+volumes:
+  vault_data:
