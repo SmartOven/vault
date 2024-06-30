@@ -5,6 +5,7 @@ services:
     image: vault:1.13.3
     container_name: vault
     restart: always
+    user: root
     ports:
       - "8200:8200"
     environment:
@@ -14,6 +15,4 @@ services:
     volumes:
       - ./vault.hcl:/vault/config/vault.hcl:rw
       - ./data:/vault/data:rw
-    command: |
-      chmod 777 /vault/data
-      vault server -config=/vault/config/vault.hcl
+    command: vault server -config=/vault/config/vault.hcl
