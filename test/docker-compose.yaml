@@ -4,7 +4,7 @@ services:
   vault:
     image: vault:1.13.3
     volumes:
-      - ./vault.json:/vault/config/vault.json
+      - ./vault.hcl:/vault/config/vault.hcl
       - ./vault/data:/vault/data
     ports:
       - "8200:8200"
@@ -13,4 +13,4 @@ services:
       - VAULT_API_ADDR=http://0.0.0.0:8200
     cap_add:
       - IPC_LOCK
-    command: vault server -config=/vault/config/vault.json
+    command: vault server -config=/vault/config/vault.hcl
