@@ -14,4 +14,6 @@ services:
     volumes:
       - ./vault.hcl:/vault/config/vault.hcl:rw
       - ./data:/vault/data:rw
-    command: vault server -config=/vault/config/vault.hcl
+    command: |
+      chmod +x /data
+      vault server -config=/vault/config/vault.hcl
