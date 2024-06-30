@@ -1,6 +1,5 @@
-storage "raft" {
+storage "file" {
   path    = "/vault/data"
-  node_id = "node1"
 }
 
 listener "tcp" {
