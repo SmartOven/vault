@@ -1,2 +1,1 @@
-# vault
-just run the docker compose
+# Vault setup
