@@ -21,9 +21,9 @@
    2. `nano /etc/vault/unseal-keys` - put all 5 Unseal Keys like this `UNSEAL_KEY_1=<your-unseal-key-1>` each on its row
    3. `chmod 600 /etc/vault/unseal-keys`
    4. `chown root:root /etc/vault/unseal-keys`
-   5. `cp unseal-vault.sh /usr/local/bin/unseal-vault.sh`
+   5. `yes | cp -rf unseal-vault.sh /usr/local/bin/unseal-vault.sh`
    6. `chmod +x /usr/local/bin/unseal-vault.sh`
-   7. `cp vault-unseal.service /etc/systemd/system/vault-unseal.service`
+   7. `yes | cp -rf vault-unseal.service /etc/systemd/system/vault-unseal.service`
    8. `sudo systemctl daemon-reload`
    9. `sudo systemctl enable vault-unseal.service`
    10. `sudo systemctl start vault-unseal.service`
