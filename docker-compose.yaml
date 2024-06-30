@@ -12,7 +12,7 @@ services:
     cap_add:
       - IPC_LOCK
     volumes:
-      - vault.hcl:vault.hcl
+      - ./vault.hcl:vault.hcl
       - vault_data:/vault/data
     command: |
       mkdir data
