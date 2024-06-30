@@ -14,8 +14,6 @@ services:
     volumes:
       - ./vault.hcl:/vault/vault.hcl
       - vault_data:/vault/data
-    command: |
-      mkdir data
-      vault server -config=/vault/vault.hcl
+    command: vault server -config=/vault/vault.hcl
 volumes:
   vault_data:

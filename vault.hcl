@@ -1,5 +1,5 @@
 storage "raft" {
-  path    = "./data"
+  path    = "/vault/data"
   node_id = "node1"
 }
 
