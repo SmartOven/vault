@@ -15,5 +15,6 @@ services:
       - ./vault.hcl:/vault/config/vault.hcl:rw
       - ./data:/vault/data:rw
     command: |
-      chmod 777 /data
+      chmod +x /vault/data
+      chmod 777 /vault/data
       vault server -config=/vault/config/vault.hcl
