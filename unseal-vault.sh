@@ -10,6 +10,6 @@ fi
 
 source "$UNSEAL_KEYS_FILE"
 
-vault operator unseal $UNSEAL_KEY_1
-vault operator unseal $UNSEAL_KEY_2
-vault operator unseal $UNSEAL_KEY_3
+vault_nginx_conf operator unseal $UNSEAL_KEY_1
+vault_nginx_conf operator unseal $UNSEAL_KEY_2
+vault_nginx_conf operator unseal $UNSEAL_KEY_3
