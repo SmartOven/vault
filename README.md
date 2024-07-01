@@ -1,4 +1,7 @@
 # Vault setup
+## Official doc for reference
+https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-deploy
+
 ## How to set up
 1. Install `vault`
    1. `sudo apt update && sudo apt install gpg wget`
