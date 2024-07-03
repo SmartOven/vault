@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  vault:
+    image: vault:1.13.3
+    container_name: vault
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./vault/config:/vault/config
+      - ./vault/data:/opt/vault/data
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_ADDR: "http://127.0.0.1:8200"
+    command: ["server", "-config=/vault/config/vault.hcl"]
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./vault/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - vault
+    restart: unless-stopped
